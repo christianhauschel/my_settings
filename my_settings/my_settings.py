@@ -59,6 +59,12 @@ plt.rcParams.update({
     "font.family": "serif"
 })
 
+# # No TeX, Sans
+# plt.rcParams.update({
+#     "text.usetex": False,
+#     "font.family": "sans"
+# })
+
 # # Arial, No TeX
 # plt.rcParams.update({
 #     "text.usetex": False,
