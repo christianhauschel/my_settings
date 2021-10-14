@@ -13,4 +13,4 @@ def calc_grid(n):
             n_cols += 1
         else:
             break
-    return n_cols, n_rows
+    return n_rows, n_cols
