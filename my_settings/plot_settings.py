@@ -5,6 +5,7 @@
 import matplotlib.pyplot as plt
 import matplotlib
 import seaborn as sns
+from platform import system
 
 # ---------------------------------------
 # Themes
@@ -53,16 +54,16 @@ sns.set_context("notebook")
 # Fonts 
 # ---------------------------------------
 
-# TeX, Latin Modern, Serif
+
 plt.rcParams.update({
-    "text.usetex": True,
-    "font.family": "serif"
+    "text.usetex": False,
+    "font.family": "sans",
 })
 
-# # No TeX, Sans
+# TeX, Serif
 # plt.rcParams.update({
-#     "text.usetex": False,
-#     "font.family": "sans"
+#     "text.usetex": True,
+#     "font.family": "serif"
 # })
 
 # # Arial, No TeX
@@ -86,3 +87,4 @@ plt.rcParams.update({
 
 import pandas as pd
 import numpy as np
+import proplot as pplt
