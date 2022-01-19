@@ -1,3 +1,11 @@
+# Description
+
+Useful functions and settings for
+- plotting, 
+- printing to console,
+- etc.
+
+
 # Installation
 
 ```bash
