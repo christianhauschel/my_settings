@@ -1,11 +1,16 @@
+from rich import print
+
 def pretty_print(txt:str, type:str="section") -> None:
-    if type=="section":
+    """
+    Pretty prints of sections and subsections into the command line.
+    """
+    if type == "section":
         print("\n\n================================================================================")
         print(f"    {txt.upper()}")
         print("================================================================================")
-    if type=="subsection":
+    elif type == "subsection":
         print("\n----------------------------------------")
         print(f"    {txt}")
         print("----------------------------------------")
-    if type=="subsubsection":
+    elif type == "subsubsection":
         print(f"\n--- {txt} ---")
