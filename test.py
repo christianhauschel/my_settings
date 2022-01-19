@@ -1,4 +1,4 @@
-from my_settings import plt, pretty_print, calc_grid, pplt
+from my_settings import plt, pretty_print, calc_grid, pplt, print
 
 import numpy as np
 
@@ -17,7 +17,7 @@ pplt.show()
 pretty_print("Section", "section")
 pretty_print("Subsection", "subsection")
 pretty_print("Subsubsection", "subsubsection")
-print("Test")
+print("Test: 123")
 
 
 print(calc_grid(21))
