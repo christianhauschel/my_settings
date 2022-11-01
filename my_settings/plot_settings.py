@@ -3,16 +3,16 @@
 # ==============================================================================
 
 import matplotlib.pyplot as plt
-import matplotlib
-import seaborn as sns
-from platform import system
+# import matplotlib
+# import seaborn as sns
+# from platform import system
 
 # ---------------------------------------
 # Themes
 # ---------------------------------------
 
-matplotlib.rc_file_defaults() # reset
-sns.set()
+# matplotlib.rc_file_defaults() # reset
+# sns.set()
 
 # Styles
     # ['seaborn-dark',
@@ -40,7 +40,7 @@ sns.set()
     #  'seaborn-deep']
 
 # Size (Context)
-sns.set_context("notebook")
+# sns.set_context("notebook")
     # paper
     # notebook
     # talk
@@ -55,10 +55,10 @@ sns.set_context("notebook")
 # ---------------------------------------
 
 
-plt.rcParams.update({
-    "text.usetex": False,
-    "font.family": "sans",
-})
+# plt.rcParams.update({
+#     "text.usetex": False,
+#     "font.family": "sans",
+# })
 
 # TeX, Serif
 # plt.rcParams.update({

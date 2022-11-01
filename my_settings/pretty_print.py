@@ -1,13 +1,25 @@
 from rich import print
 
-def pretty_print(txt:str, type:str="section") -> None:
-    """
-    Pretty prints of sections and subsections into the command line.
+
+def pretty_print(txt: str, type: str = "section") -> None:
+    """Pretty prints of sections and subsections into the command line.
+
+    Parameters
+    ----------
+    txt : str
+        text to print
+    type : str, optional
+        section type, by default "section", 
+        other options: "subsection", "subsubsection"
     """
     if type == "section":
-        print("\n\n================================================================================")
+        print(
+            "\n\n================================================================================"
+        )
         print(f"    {txt.upper()}")
-        print("================================================================================")
+        print(
+            "================================================================================"
+        )
     elif type == "subsection":
         print("\n----------------------------------------")
         print(f"    {txt}")

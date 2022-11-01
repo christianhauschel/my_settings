@@ -1,14 +1,11 @@
 import numpy as np
-from mpl_toolkits.mplot3d import Axes3D
-from matplotlib import cm
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
 from matplotlib.patches import FancyArrowPatch
-from mpl_toolkits.mplot3d import proj3d
+from mpl_toolkits.mplot3d import proj3d, Axes3D
 
 import numpy as np
 
-def calc_grid(n):
+def calc_grid(n: int) -> tuple:
     """
     Calc number of cols/rows for subplots.
     """
@@ -26,16 +23,20 @@ def calc_grid(n):
             break
     return n_rows, n_cols
 
-def set_3daxes_equal(ax):
+def set_3daxes_equal(ax: plt.Axes) -> None:
     """
     Make axes of 3D plot have equal scale so that spheres appear as spheres,
     cubes as cubes, etc..  This is one possible solution to Matplotlib's
     ax.set_aspect('equal') and ax.axis('equal') not working for 3D.
 
-    Input
-      ax: a matplotlib axis, e.g., as output from plt.gca().
+    Arguments
+    ---------
 
-    Source: 
+    ax: a matplotlib axis, e.g., as output from plt.gca().
+
+    References
+    ----------
+
     https://stackoverflow.com/questions/13685386/matplotlib-equal-unit-length-with-equal-aspect-ratio-z-axis-is-not-equal-to
     """
 
@@ -58,13 +59,13 @@ def set_3daxes_equal(ax):
     ax.set_ylim3d([y_middle - plot_radius, y_middle + plot_radius])
     ax.set_zlim3d([z_middle - plot_radius, z_middle + plot_radius])
 
-class Arrow3D(FancyArrowPatch):
+class Arrow3D(FancyArrowPatch): 
     """
     Matplotlib 3D Arrow.
 
     Example
     -------
-    
+
     ```python
     a = Arrow3D(
             [x_0, v[0]], 
@@ -75,7 +76,9 @@ class Arrow3D(FancyArrowPatch):
     ax.add_artist(a)
     ```
 
-    Source:
+    References
+    ----------
+
     https://stackoverflow.com/questions/22867620/putting-arrowheads-on-vectors-in-matplotlibs-3d-plot
     """
     def __init__(self, xs, ys, zs, *args, **kwargs):
