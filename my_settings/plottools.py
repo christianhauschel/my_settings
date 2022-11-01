@@ -62,11 +62,16 @@ class Arrow3D(FancyArrowPatch):
     """
     Matplotlib 3D Arrow.
 
-    Example:
+    Example
+    -------
+    
     ```python
-    a = Arrow3D([mean_x, v[0]], [mean_y, v[1]], 
-                [mean_z, v[2]], mutation_scale=20, 
-                lw=3, arrowstyle="-|>", color="r")
+    a = Arrow3D(
+            [x_0, v[0]], 
+            [y_0, v[1]], 
+            [z_0, v[2]], 
+            mutation_scale=20, lw=3, arrowstyle="-|>", color="r"
+        )
     ax.add_artist(a)
     ```
 
