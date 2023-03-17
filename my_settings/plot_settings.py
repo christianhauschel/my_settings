@@ -85,9 +85,6 @@ import matplotlib.pyplot as plt
 # Common Modules
 # ==============================================================================
 
-import pandas as pd
-import numpy as np
+
 import proplot as pplt
-
-
 pplt.rc.cycle = "FlatUI"

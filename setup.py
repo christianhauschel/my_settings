@@ -8,7 +8,7 @@ setup(
       author="Christian Hauschel", 
       zip_safe=False,
       install_requires=[
-          "matplotlib>=3.4.0,<=3.4.3",
+          "matplotlib>=3.4.0,<3.6",
           "numpy",
           "seaborn",
           "pandas",
