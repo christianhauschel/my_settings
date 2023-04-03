@@ -67,6 +67,7 @@ def pretty_print(txt: str, type: str = "section", simple=False) -> None:
             print(f"\n--- {txt} ---")
 
         else:
+            print()
             print(
                 Panel(
                     Text(txt, justify="center"),
