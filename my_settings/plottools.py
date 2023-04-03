@@ -5,12 +5,14 @@ from mpl_toolkits.mplot3d import proj3d, Axes3D
 
 import numpy as np
 
+
 def calc_grid(n: int) -> tuple:
     """
     Calc number of cols/rows for subplots.
     """
+
     def nearest_square(num):
-        num1 = np.floor(np.sqrt(num))**2
+        num1 = np.floor(np.sqrt(num)) ** 2
         return np.sqrt(num1)
 
     n_rows = int(nearest_square(n))
@@ -22,6 +24,7 @@ def calc_grid(n: int) -> tuple:
         else:
             break
     return n_rows, n_cols
+
 
 def set_3daxes_equal(ax: plt.Axes) -> None:
     """
@@ -53,13 +56,14 @@ def set_3daxes_equal(ax: plt.Axes) -> None:
 
     # The plot bounding box is a sphere in the sense of the infinity
     # norm, hence I call half the max range the plot radius.
-    plot_radius = 0.5*max([x_range, y_range, z_range])
+    plot_radius = 0.5 * max([x_range, y_range, z_range])
 
     ax.set_xlim3d([x_middle - plot_radius, x_middle + plot_radius])
     ax.set_ylim3d([y_middle - plot_radius, y_middle + plot_radius])
     ax.set_zlim3d([z_middle - plot_radius, z_middle + plot_radius])
 
-class Arrow3D(FancyArrowPatch): 
+
+class Arrow3D(FancyArrowPatch):
     """
     Matplotlib 3D Arrow.
 
@@ -68,9 +72,9 @@ class Arrow3D(FancyArrowPatch):
 
     ```python
     a = Arrow3D(
-            [x_0, v[0]], 
-            [y_0, v[1]], 
-            [z_0, v[2]], 
+            [x_0, v[0]],
+            [y_0, v[1]],
+            [z_0, v[2]],
             mutation_scale=20, lw=3, arrowstyle="-|>", color="r"
         )
     ax.add_artist(a)
@@ -81,12 +85,13 @@ class Arrow3D(FancyArrowPatch):
 
     https://stackoverflow.com/questions/22867620/putting-arrowheads-on-vectors-in-matplotlibs-3d-plot
     """
+
     def __init__(self, xs, ys, zs, *args, **kwargs):
-        FancyArrowPatch.__init__(self, (0,0), (0,0), *args, **kwargs)
+        FancyArrowPatch.__init__(self, (0, 0), (0, 0), *args, **kwargs)
         self._verts3d = xs, ys, zs
 
     def draw(self, renderer):
         xs3d, ys3d, zs3d = self._verts3d
         xs, ys, zs = proj3d.proj_transform(xs3d, ys3d, zs3d, renderer.M)
-        self.set_positions((xs[0],ys[0]),(xs[1],ys[1]))
+        self.set_positions((xs[0], ys[0]), (xs[1], ys[1]))
         FancyArrowPatch.draw(self, renderer)

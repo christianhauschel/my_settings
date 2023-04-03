@@ -30,13 +30,13 @@ logger.error("This is an error message.")
 logger.critical("This is a critical message.")
 logger.exception("This is an exception message.")
 
-# %% 
+# %%
 
-try:
-    a = 3
-    raise Exception("Test") 
-except Exception as e:
-    print_exception()
+# try:
+#     a = 3
+#     raise Exception("Test")
+# except Exception as e:
+#     print_exception()
 
 
 # %%
@@ -50,12 +50,12 @@ except Exception as e:
 # ax[1].plot(x, 3*y, label="3")
 # ax[1].plot(x, 4*y, label="4")
 # ax.format(
-#     abc='A.', 
+#     abc='A.',
 #     abcloc='ul',
 #     lltitle="lltitle",
 #     suptitle="Suptitle",
-#     xlabel="$x$", 
-#     ylabel=r"$y = \frac{1}{2}mc^2$", 
+#     xlabel="$x$",
+#     ylabel=r"$y = \frac{1}{2}mc^2$",
 #     title="Title"
 # )
 # ax.legend(ncols=1, location="upper center")
