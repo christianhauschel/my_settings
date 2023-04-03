@@ -10,8 +10,6 @@ setup(
     install_requires=[
         "matplotlib>=3.4.0,<3.6",
         "numpy",
-        "seaborn",
-        "pandas",
         "rich",
         "proplot",
     ],
