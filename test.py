@@ -5,6 +5,9 @@ from my_settings import *
 import numpy as np
 
 # %% Convert Win to WSL Path
+
+pretty_print("Section: A console renderable that draws a border around its contents.", "section")
+
 path_win = r"C:\\Users"
 print(path_win, "-->", convert_path_win2wsl(path_win))
 
@@ -12,6 +15,10 @@ path_win = r"A:\\Code"
 print(path_win, "-->", convert_path_win2wsl(path_win))
 
 
+pretty_print("Subsection: A console renderable that draws a border around its contents.", "subsection")
+
+
+pretty_print("Subsubsection", "subsubsection")
 
 # %%
 
