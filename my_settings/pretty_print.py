@@ -3,6 +3,11 @@ from rich.style import Style
 from rich.text import Text
 from rich.panel import Panel
 from rich import box
+from rich.console import Console
+
+def print_exception(show_locals=True, **kwargs):
+    console = Console()
+    console.print_exception(show_locals=show_locals, **kwargs)
 
 def pretty_print(txt: str, type: str = "section", simple=False) -> None:
     """Pretty prints of sections and subsections into the command line.

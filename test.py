@@ -1,24 +1,43 @@
 # %% Modules
 
 from my_settings import *
-
 import numpy as np
 
 # %% Convert Win to WSL Path
 
-pretty_print("Section: A console renderable that draws a border around its contents.", "section")
+# pretty_print("Section: A console renderable that draws a border around its contents.", "section")
 
-path_win = r"C:\\Users"
-print(path_win, "-->", convert_path_win2wsl(path_win))
+# path_win = r"C:\\Users"
+# print(path_win, "-->", convert_path_win2wsl(path_win))
 
-path_win = r"A:\\Code"
-print(path_win, "-->", convert_path_win2wsl(path_win))
-
-
-pretty_print("Subsection: A console renderable that draws a border around its contents.", "subsection")
+# path_win = r"A:\\Code"
+# print(path_win, "-->", convert_path_win2wsl(path_win))
 
 
-pretty_print("Subsubsection", "subsubsection")
+# pretty_print("Subsection: A console renderable that draws a border around its contents.", "subsection")
+
+
+# pretty_print("Subsubsection", "subsubsection")
+
+# %% Test Logging
+
+
+logger = logger_custom(__name__, fname="out/test.log")
+logger.debug("This is a debug message.")
+logger.info("This is an info message.")
+logger.warning("This is a warning message.")
+logger.error("This is an error message.")
+logger.critical("This is a critical message.")
+logger.exception("This is an exception message.")
+
+# %% 
+
+try:
+    a = 3
+    raise Exception("Test") 
+except Exception as e:
+    print_exception()
+
 
 # %%
 
