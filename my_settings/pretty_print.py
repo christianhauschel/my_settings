@@ -36,12 +36,14 @@ def pretty_print(txt: str, type: str = "section", simple=False) -> None:
                 "================================================================================"
             )
         else:
+            print()
+            print()
             print(
                 Panel(
                     Text(txt.upper(), justify="center"),
                     style=Style(bold=True),
                     box=box.DOUBLE,
-                    padding=1,
+                    padding=0,
                     width=80,
                 )
             )
@@ -51,6 +53,7 @@ def pretty_print(txt: str, type: str = "section", simple=False) -> None:
             print(f"    {txt}")
             print("----------------------------------------")
         else:
+            print()
             print(
                 Panel(
                     Text(txt, justify="center"),
