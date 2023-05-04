@@ -1,7 +1,7 @@
 from subprocess import PIPE, run
 import shlex
 import subprocess
-
+from subprocess import run, check_output
 
 def run_command(command, **kwargs):
     return run(shlex.split(command), **kwargs)
@@ -27,3 +27,26 @@ def convert_path_win2wsl(windows_path):
     # Get the converted Unix path from the command's output
     unix_path = process.stdout.decode().strip()
     return unix_path
+
+
+def check_wsl_mount(device_path: str, shutdown: bool = True):
+    """Checks if the given path is mounted on WSL.
+    Parameters
+    ----------
+    device_path : str
+    shutdown : bool
+        True: If not mounted, WSL gets shut down.
+    Returns
+    -------
+    bool
+        mounted or not mounted
+    """
+
+    # Run the `mount` command and capture its output
+    output = check_output(["wsl", "mount"], universal_newlines=True)
+
+    if device_path in output:
+        return True
+    if shutdown:
+        run(["wsl", "--shutdown"])
+    return False

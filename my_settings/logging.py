@@ -1,7 +1,6 @@
 import logging
 from rich.logging import RichHandler
 from logging.handlers import RotatingFileHandler
-from rich.console import Console
 
 
 def logger_custom(
@@ -17,12 +16,10 @@ def logger_custom(
     backupCount=10,
 ):
 
-    # if console:
-    #     logging.basicConfig(
-    #         level=level_console, format=format_console, datefmt=format_date, handlers=[RichHandler()]
-    #     )
-
     logger = logging.getLogger(name)
+
+    # logger.propagate = False
+    # logger.setLevel(min(level_file, level_console))
 
     # Create a RichHandler for console output
     if console:
@@ -39,7 +36,7 @@ def logger_custom(
     # Create a FileHandler for file output
     if fname is not None:
         file_handler = RotatingFileHandler(
-            fname, maxBytes=maxBytes, backupCount=backupCount
+            fname, maxBytes=maxBytes, backupCount=backupCount, 
         )
         file_handler.setLevel(level_file)
         formatter = logging.Formatter(format_file, datefmt=format_date)

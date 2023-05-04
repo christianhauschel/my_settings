@@ -2,6 +2,7 @@
 
 from my_settings import *
 import numpy as np
+import logging
 
 # %% Convert Win to WSL Path
 
@@ -22,7 +23,7 @@ pretty_print("Subsubsection", "subsubsection")
 # %% Test Logging
 
 
-logger = logger_custom(__name__, fname="out/test.log")
+logger = logger_custom(__name__, fname="out/test.log", level_console=logging.DEBUG, level_file=logging.DEBUG)
 logger.debug("This is a debug message.")
 logger.info("This is an info message.")
 logger.warning("This is a warning message.")
