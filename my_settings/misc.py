@@ -1,4 +1,4 @@
-from subprocess import PIPE, run
+from subprocess import PIPE, run, CalledProcessError
 import shlex
 import subprocess
 from subprocess import run, check_output
@@ -43,10 +43,13 @@ def check_wsl_mount(device_path: str, shutdown: bool = True):
     """
 
     # Run the `mount` command and capture its output
-    output = check_output(["wsl", "mount"], universal_newlines=True)
+    try:
+        output = check_output(["wsl", "mount"], universal_newlines=True)
+        if device_path in output:
+            return True
+    except CalledProcessError as e:
+        print(e)
 
-    if device_path in output:
-        return True
     if shutdown:
         run(["wsl", "--shutdown"])
     return False
